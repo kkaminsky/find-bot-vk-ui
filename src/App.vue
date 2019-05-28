@@ -89,7 +89,7 @@ export default {
     oauth(){
       let vm = this
 
-      let redirWin = window.open("https://oauth.vk.com/authorize?client_id=6996710&display=page&redirect_uri=http://localhost:8080/redirect&scope=friends,video,photos&response_type=code&v=5.95",'_blank', 'height=355,width=660,scrollbars=yes,status=1')
+      let redirWin = window.open("https://oauth.vk.com/authorize?client_id=6996710&display=page&redirect_uri=http://localhost:8080/redirect&scope=friends,video,photos,groups&response_type=code&v=5.95",'_blank', 'height=355,width=660,scrollbars=yes,status=1')
 
       var timer = setInterval(function() {
         console.log("timer work")

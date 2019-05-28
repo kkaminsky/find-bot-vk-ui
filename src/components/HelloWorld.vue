@@ -38,29 +38,105 @@
               <v-icon v-else @click="up=!up">keyboard_arrow_up</v-icon>
 
           </v-subheader>-->
-          <v-list-group key
+          <v-list-group
           >
             <template v-slot:activator >
               <v-list-tile>
                 <v-list-tile-content>
-                  <v-list-tile-title>Как работате?</v-list-tile-title>
+                  <v-list-tile-title>Как работает?</v-list-tile-title>
                 </v-list-tile-content>
               </v-list-tile>
             </template>
-            <v-list-tile>df</v-list-tile>
+            <v-list-tile><b>Страницы проверяемых пользователей фильтруются по следующим характеристикам:</b></v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-list-tile-title>Content filtering</v-list-tile-title>
-                <v-list-tile-sub-title>Set the content filtering level to restrict appts that can be downloaded</v-list-tile-sub-title>
+                <v-list-tile-title>Аккаунт забанен</v-list-tile-title>
+                <v-list-tile-sub-title>Живой человек, пользующийся соцсетью восстановит доступ. Спамеру или
+                  ботоводу с тысячей аккаунтов легче завести новый аккаунт после бана. Да и крутить рекламу
+                  по забаненным живым пользователям все равно невозможно.</v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
 
             <v-list-tile>
               <v-list-tile-content>
-                <v-list-tile-title>Password</v-list-tile-title>
-                <v-list-tile-sub-title>Require password for purchase or use password to restrict purchase</v-list-tile-sub-title>
+                <v-list-tile-title>Подписан на 1000 и более сообществ</v-list-tile-title>
+                <v-list-tile-sub-title>Основная статья заработка на ботах — это вступление в различные группы
+                  (ну да, еще лайки и репосты). И вряд ли владельцы ботоферм смогут скрыть это.</v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
+
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>Состоит во множестве сообществ о разных городах</v-list-tile-title>
+                <v-list-tile-sub-title>Признаться, не нашел ни единой причины, по которой обычному человеку может быть
+                  интересно одновременно следить за новостями групп «ремонт стиральных машин казань», «наружная
+                  реклама омск», «дизайн интерьера калуга» и еще десятке коммерческих сообществ разных городов.
+                  Особенно учитывая качество контента в 95% таких сообществ. Зато боту, зарабатывающему
+                  на вступлении в сообщества это очень выгодно.
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>Состоит в сообществе о взаимораскрутке</v-list-tile-title>
+                <v-list-tile-sub-title>Таких стоит оставлять, только если ваша ЦА — школьники с дефицитом внимания,
+                  отсутствием интересов и кучей свободного времени. Лично я считаю такую аудиторию не просто мусорной,
+                  а ярко сигнализирующей о том, что они ненастоящие.
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>80% фотографий, постов и видео выложены в один день</v-list-tile-title>
+                <v-list-tile-sub-title>Чаще всего страницы ботов заполняются единожды, для имитации активности пользователя.
+                  Фильтр не рассматривает крайние случаи, когда у человека мало постов и фотографий на страницы
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>На странице имеются слова-триггеры</v-list-tile-title>
+                <v-list-tile-sub-title>Чаще всего на страниц ботов можно найти следующие слова и словосочетания:
+                  "Раскрутк","Продвижение","Взаимные лайки","Пиар","Добавь","Курсов","Диплом","Экзамен","Реферат","Сесси"
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>Состоит в сообществе о взаимораскрутке</v-list-tile-title>
+                <v-list-tile-sub-title>Таких стоит оставлять, только если ваша ЦА — школьники с дефицитом внимания,
+                  отсутствием интересов и кучей свободного времени. Лично я считаю такую аудиторию не просто мусорной,
+                  а ярко сигнализирующей о том, что они ненастоящие.
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>Нет ссылок на другие соц. сети</v-list-tile-title>
+                <v-list-tile-sub-title>Я не нашел способа установить ссылку на фейсбук/инстаграм через апи.
+                  Может быть плохо искал, а может его и нет. Но поставить ссылку для бота сложнее: надо как минимум
+                  завести этот аккаунт в соцсети и привязать его в интерфейсе вконтакте.
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>Посты пользователя никто не смотрит</v-list-tile-title>
+                <v-list-tile-sub-title>Этот признак куда более прост. Обычно если пользователь имеет кучу друзей, н
+                  о при этом у него почти нет просмотров записей на стене, значит его друзья — имитация. А для чего
+                  нужна имитация друзей, как ни для того, чтобы придать реальности фейковому аккаунту?
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+
           </v-list-group>
 
 
@@ -183,10 +259,11 @@
     >
       <v-progress-linear color="blue"></v-progress-linear>
       <template v-slot:items="props" >
-        <td ><v-avatar><v-img :src="props.item.id"></v-img></v-avatar></td>
-        <td  class="text-xs-right">{{ props.item.name }}</td>
         <td class="text-xs-right"><a :href="'//' + props.item.link" target="_blank">
-        {{ props.item.link}}</a></td>
+          {{ props.item.link}}</a></td>
+        <td  class="text-xs-right"><v-avatar><v-img :src="props.item.icon"></v-img></v-avatar></td>
+        <td  class="text-xs-left">{{ props.item.name }}</td>
+
         <td v-if="!bot(props.item)" class="text-xs-right">{{ props.item.totalpoints }}</td>
         <td v-else style="background-color: #ffd4da" class="text-xs-right">{{ props.item.totalpoints }}</td>
         <td class="text-xs-right"><div v-for="cat in props.item.categ">
@@ -230,11 +307,13 @@
       ],
       headers: [
         {
-          align: 'left',
-          sortable: false,
+          text: "Ссылка",
+          value: 'link',
+          align: 'right',
         },
-        { text: "Имя", value: 'name',align: 'right'},
-        { text: 'Ссылка', value: 'id',align: 'right' },
+        { sortable: false,align: 'left',value:"icon" },
+        { text: "Имя", value: 'name',align: 'left'},
+
         { text: 'Очки бота', value: 'totalpoints' ,align: 'right'},
         { text: 'Категории', value: 'categ' ,align: 'right'}
       ],
@@ -288,6 +367,7 @@
         return item.totalpoints > 75
       },
       loadGroup(){
+        this.data=[]
         this.progress=true
         let vm = this
         this.$http.post("/api/getmembers",{
@@ -308,7 +388,7 @@
                   {
                     link: res.data.id,
                     name: res.data.name,
-                    id: res.data.icon,
+                    icon: res.data.icon,
                     totalpoints: res.data.total,
                     categ: res.data.categ
 
@@ -322,6 +402,7 @@
         })
       },
       load(){
+        this.data=[]
         this.progress=true
         let vm = this
         console.log(this.ids)
@@ -341,7 +422,7 @@
                 {
                   link: res.data.id,
                   name: res.data.name,
-                  id: res.data.icon,
+                  icon: res.data.icon,
                   totalpoints: res.data.total,
                   categ: res.data.categ
 
