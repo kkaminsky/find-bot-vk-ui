@@ -271,12 +271,12 @@
       <template v-slot:items="props" >
         <td class="text-xs-right"><a :href="'//' + props.item.link" target="_blank">
           {{ props.item.link}}</a></td>
-        <td  class="text-xs-right">{{props.item.targetId}}</td>
         <td  class="text-xs-right"><v-avatar><v-img :src="props.item.icon"></v-img></v-avatar></td>
         <td  class="text-xs-left">{{ props.item.name }}</td>
 
-        <td v-if="!bot(props.item)" class="text-xs-right">{{ props.item.totalpoints }}</td>
-        <td v-else style="background-color: #ffd4da" class="text-xs-right">{{ props.item.totalpoints }}</td>
+        <td v-if="props.item.targetId" class="text-xs-right">{{ props.item.targetId*100 }}%</td>
+        <td v-else class="text-xs-right">Вероятность не определена</td>
+
         <td class="text-xs-right"><div v-for="cat in props.item.categ">
           {{cat}}
         </div></td>
@@ -323,10 +323,9 @@
           align: 'right',
         },
         { sortable: false,align: 'left',value:"icon" },
-        { sortable: true,align: 'left',value:"targetId"},
         { text: "Имя", value: 'name',align: 'left'},
 
-        { text: 'Очки бота', value: 'totalpoints' ,align: 'right'},
+        { text: 'Вероятность', value: 'targetId' ,align: 'right'},
         { text: 'Категории', value: 'categ' ,align: 'right'}
       ],
       data: [],
@@ -397,6 +396,7 @@
                 "code":localStorage.getItem("code"),
                 "userId":post
               }).then(res=>{
+                console.log(res)
                 vm.data.push(
                   {
                     link: res.data.id,
