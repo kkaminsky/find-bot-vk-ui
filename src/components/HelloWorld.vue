@@ -220,12 +220,22 @@
     <v-layout row wrap>
       <v-flex >
 
-        <v-text-field v-model="groupId"
+        <v-text-field  v-model="groupId"
                       label="Введите идентификатор группы"
                       outline
         ></v-text-field>
       </v-flex>
-      <v-btn :disabled="!enable" color="info" flat @click="loadGroup">Начать</v-btn>
+      <v-flex >
+
+        <v-text-field  v-model="offset"
+                      label="offset"
+                      outline
+        ></v-text-field>
+      </v-flex>
+        <v-btn :disabled="!enable" color="info" flat @click="loadGroup">Начать</v-btn>
+
+
+
     </v-layout>
 
     <v-toolbar color="white">
@@ -261,6 +271,7 @@
       <template v-slot:items="props" >
         <td class="text-xs-right"><a :href="'//' + props.item.link" target="_blank">
           {{ props.item.link}}</a></td>
+        <td  class="text-xs-right">{{props.item.targetId}}</td>
         <td  class="text-xs-right"><v-avatar><v-img :src="props.item.icon"></v-img></v-avatar></td>
         <td  class="text-xs-left">{{ props.item.name }}</td>
 
@@ -312,6 +323,7 @@
           align: 'right',
         },
         { sortable: false,align: 'left',value:"icon" },
+        { sortable: true,align: 'left',value:"targetId"},
         { text: "Имя", value: 'name',align: 'left'},
 
         { text: 'Очки бота', value: 'totalpoints' ,align: 'right'},
@@ -372,7 +384,8 @@
         let vm = this
         this.$http.post("/api/getmembers",{
           "code":localStorage.getItem("code"),
-          "groupId":this.groupId
+          "groupId":this.groupId,
+          "offset":this.offset
         }).then(res=>{
           var chain = new Promise(function(resolve, reject) {
             resolve(console.log("+"))
@@ -390,7 +403,8 @@
                     name: res.data.name,
                     icon: res.data.icon,
                     totalpoints: res.data.total,
-                    categ: res.data.categ
+                    categ: res.data.categ,
+                    targetId: res.data.procent
 
                   }
                 )
